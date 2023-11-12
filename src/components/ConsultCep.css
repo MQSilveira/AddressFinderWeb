@@ -3,11 +3,35 @@
   flex-wrap: wrap;
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 0 10px #0000001a;
 }
+.list-container {
+  margin-top: auto;
+}
+
+.address-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.address-list th {
+  cursor: pointer;
+  background-color: #9ac0d4;
+  transition: background-color 0.3s;
+}
+
+.address-list th:hover {  
+  background-color: #67a3c3;
+
+}
+
+.address-list td {
+  text-align: left;
+  border: 1px solid #939292;
+  font-size: 14px;
+  white-space: nowrap;
+  text-align: center;
+}
+
 
 .map-container {
   flex: 1;
@@ -37,7 +61,7 @@ input {
   box-sizing: border-box;
 }
 
-button {
+.consult {
   width: 100%;
   padding: 10px;
   background-color: #4caf50;
@@ -47,9 +71,25 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.consult:hover {
   background-color: #45a049;
 }
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #67a3c3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {  
+  background-color: #54819a;
+
+}
+
 
 div {
   padding: 10px;
@@ -77,9 +117,28 @@ h2 {
 
 
 
+
 @media screen and (max-width: 600px) {
+  .address-list th,
+  .address-list td {
+    display: none;
+  }
+
+  .address-list th:first-child,
+  .address-list td:first-child,
+  .address-list th:nth-child(2),
+  .address-list td:nth-child(2),
+  .address-list th:nth-child(5),
+  .address-list td:nth-child(5),
+  .address-list th:nth-child(6),
+  .address-list td:nth-child(6) {
+    display: table-cell;
+  }
+
+
   .container {
     flex-direction: column;
+    align-items: center;
   }
 
   .map-container {
@@ -104,4 +163,3 @@ h2 {
     max-width: 100%;  
   }
 }
-

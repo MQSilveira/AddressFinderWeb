@@ -9,7 +9,7 @@ const CepForm = ({ cep, onCepChange, onSubmit }) => {
                 value={cep}
                 onChange={onCepChange}
             />
-            <button type='submit'>Consultar</button>
+            <button className='consult' type='submit'>Consultar</button>
         </form>
     )
 }

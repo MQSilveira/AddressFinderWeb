@@ -1,3 +1,4 @@
+import { useState } from "react"
 
 const AddressInfo = ( data ) => {
     return (
@@ -12,4 +13,56 @@ const AddressInfo = ( data ) => {
     )
 }
 
-export default AddressInfo
+const AddressList = ({ addressList }) => {
+    const [orderKey , setOrderKey] = useState({})
+    var keys = Object.keys(addressList[0]) || []
+    keys = keys.filter((key) => key !== 'id');
+
+    const handleOrder = (key) => {
+        setOrderKey((prevKey) => {
+            const order = prevKey[key] === 'asc' ? 'desc' : 'asc'
+            return { [key]: order }
+        }
+    )}
+    
+    const getOrderedAddressList = () => {
+        return addressList.sort((a, b) => {
+            const key = Object.keys(orderKey).find((key) => orderKey[key])
+            if (orderKey[key] === 'asc') {
+                return a[key] > b[key] ? 1 : -1
+            } else {
+                return a[key] < b[key] ? 1 : -1
+            }
+        }
+    )}
+
+    return (
+        <div className='address-list'>
+            <table>
+                <thead>
+                    <tr>
+                        {keys.map((key) => (
+                            <th key={key} onClick={() => handleOrder(key)}>
+                                {key.toLocaleUpperCase()}
+                                {orderKey[key] && (
+                                    <span>{orderKey[key] === 'asc' ? '▲' : '▼'}</span>
+                                )}
+                            </th>
+                        ))}
+                    </tr>
+                </thead>
+                <tbody>
+                    {getOrderedAddressList().map((address) => (
+                        <tr key={address.cep}>
+                            {keys.map((key) => (
+                                <td key={key}>{address[key]}</td>
+                            ))}
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    )
+}
+
+export { AddressInfo, AddressList}
