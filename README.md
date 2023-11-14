@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# AddressFinderWeb
+Este é um projeto ReactJS que permite aos usuários inserir um CEP e obter todos os dados correspondentes a esse CEP. A aplicação realiza consultas no banco de dados local através de requisições para uma API local. Caso o CEP não esteja cadastrado no banco de dados, a aplicação consome a API do ViaCEP para obter as informações necessárias.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Além disso, o projeto oferece a funcionalidade de acessar todos os CEPs contidos no banco de dados, permitindo ordená-los de acordo com a preferência do usuário.
 
-## Available Scripts
+# Funcionalidades
+**Consulta de CEP:**
+  - Os usuários podem inserir um CEP na interface.
+  - A aplicação verifica se o CEP está cadastrado no banco de dados local.
+  - Caso não esteja cadastrado, a aplicação consome a API do ViaCEP para obter os dados.
 
-In the project directory, you can run:
+**Listagem e Ordenação de CEPs:**
+  - Exibe todos os CEPs cadastrados no banco de dados.
+  - Permite aos usuários ordenar os CEPs de acordo com critérios específicos.
 
-### `npm start`
+## Pré-requisitos
+*Certifique-se de ter o Node.js e o npm instalados em sua máquina antes de executar o projeto.*
+```
+npm install
+```
+## Como executar o projeto
+```
+npm start
+```
+Acesse `http://localhost:3000` para visualizar a aplicação no navegador.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Repositório da API Backend (Node.js)
+  *O backend para este projeto foi desenvolvido em Node.js e está disponível no seguinte repositório:*
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  [Repositório da API Backend](https://github.com/MQSilveira/NodeDbInserter)
 
-### `npm test`
+Certifique-se de configurar e executar o backend antes de iniciar a aplicação React.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
